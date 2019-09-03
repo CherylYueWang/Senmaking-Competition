@@ -1,0 +1,2 @@
+command: python3 $program/evaluate.py $input $output
+description: Official evaluation script for SemEval 2020 Task 4.

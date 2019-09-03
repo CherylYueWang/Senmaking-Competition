@@ -1,0 +1,93 @@
+title: SemEval 2020 Task 4 - Commonsense Validation and Explanation
+description: Whether the statement make sense? Why?
+image: task4-logo.png
+has_registration: True
+allow_teams: True
+admin_names: Shuailong,wangcunxiang
+competition_docker_image: codalab/codalab-legacy:py3
+
+html:
+  overview: overview.html
+  evaluation: evaluation.html
+  data: data.html
+  submission: submission.html
+  terms: terms_and_conditions.html
+
+phases:
+  1:
+    phasenumber: 1
+    label: "Practice"
+    description: "Practice phase: submit result on trial data and get result for a taste of the data and task"
+    start_date: 2019-08-15 00:00:00
+    max_submissions: 999
+    leaderboard_management_mode: default
+    color: yellow
+    scoring_program: scoring.zip
+    input_data: trial_data.zip
+    public_data: trial_data.zip
+    reference_data: trial_reference.zip
+    starting_kit: starting_kit.zip
+
+  2:
+    phasenumber: 2
+    label: "Evaluation - Subtask A"
+    description: "Evaluation phase: train your model on offical training set and you may use official validation set during training. Feel free to use additional resources such as knowledge bases etc. Submit results on official test data and get result for competition. Note that only the final valid submission on CodaLab will be taken as the official submission to the competition."
+    start_date: 2020-01-10 00:00:00
+    max_submissions: 10
+    scoring_program: scoring.zip
+    reference_data: test_reference.zip
+    leaderboard_management_mode: hide_results
+    color: green
+
+  3:
+    phasenumber: 3
+    label: "Evaluation - Subtask C"
+    start_date: 2020-01-17 00:00:00
+    max_submissions: 10
+    scoring_program: scoring.zip
+    reference_data: test_reference.zip
+    leaderboard_management_mode: hide_results
+    color: green
+
+  4:
+    phasenumber: 4
+    label: "Evaluation - Subtask B"
+    start_date: 2020-01-24 00:00:00
+    max_submissions: 10
+    scoring_program: scoring.zip
+    reference_data: test_reference.zip
+    leaderboard_management_mode: hide_results
+    color: green
+
+  5:
+    phasenumber: 5
+    label: "Post-Evaluation"
+    start_date: 2020-01-31
+    max_submissions: 999
+    scoring_program: scoring.zip
+    reference_data: test_reference.zip
+    auto_migration: True
+    leaderboard_management_mode: default
+    color: blue
+
+leaderboard:
+  leaderboards:
+    RESULTS: &RESULTS
+      label: Results
+      rank: 1
+  columns:
+    A_Accuracy:
+      leaderboard: *RESULTS
+      label: Subtask A Accuracy
+      rank: 1
+      numeric_format: 1
+    B_Accuracy:
+      leaderboard: *RESULTS
+      label: Subtask B Accuracy
+      rank: 1
+      numeric_format: 1
+    C_BLEU:
+      leaderboard: *RESULTS
+      label: Subtask C BLEU
+      rank: 1
+      numeric_format: 1

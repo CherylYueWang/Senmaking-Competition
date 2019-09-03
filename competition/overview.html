@@ -1,0 +1,47 @@
+<h3>Introduction</h3>
+<p>Welcome to Commonsense Validation and Explanation Challenge!</p>
+<p>The task is to directly test whether a system can differentiate natural language statements that make sense from
+    those that do not make sense. We designed three subtasks. The first task is to choose from two natural language
+    statements with similar wordings which one makes sense and which one does not make sense; The second task is to find
+    the key reason from three options why a given statement does not make sense; The third task asks machine to generate
+    the reasons and we use BLEU to evaluate them.</p>
+<p>Formally, each instance in our dataset is composed of 10 sentences: {s1, s2, o1, o2, o3, r1, r2, r3}. s1 and s2 are
+    two similar statements which in the same syntactic structure and differ by only a few words, but only one of them
+    makes sense while the other does not. They are used on our first subtask called Validation, which requires the model
+    to identify which one makes sense. For the against-common-sense statement s1 or s2, we have three optional sentences
+    o1, o2 and o3 to explain why the statement does not make sense. Our subtask 2, named Explanation (Multi-Choice),
+    requires that the only one correct reason be identified from two other confusing ones. For the same
+    against-common-sense statement s1 or s2, our subtask 3 naming Explanation (Generation), asks the participants to
+    generate the reason why it does not make sense. The 3 referential reasons r1, r2 and r3 are used for evaluating task
+    3.</p>
+<h4>Example:</h4>
+<h5>Task A: Validation</h5>
+<pre>Task: Which statement of the two is against common sense?
+Statement1: He put a turkey into the fridge.
+Statement2: He put an elephant into the fridge.
+</pre>
+<h5>Task B: Explanation (Multi-Choice)</h5>
+<pre>Task: Select the most corresponding reason why this statement is against common sense.
+Statement: He put an elephant into the fridge.
+A: An elephant is much bigger than a fridge.
+B: Elephants are usually white while fridges are usually white.
+C: An elephant cannot eat a fridge.
+</pre>
+<h5>Task C: Explanation (Generation)</h5>
+<pre>Task: Generate the reason why this statement is against common sense and we will use BELU to evaluate it.
+Statement: He put an elephant into the fridge.
+Referential Reasons:
+1. An elephant is much bigger than a fridge.
+2. A fridge is much smaller than an elephant.
+3. Most of the fridges aren&rsquo;t large enough to contain an elephant.
+</pre>
+
+<h4>Paper</h4>
+
+For more detailed information, please refer to this <a
+    href="https://github.com/wangcunxiang/SemEval2020-Task4-Commonsense-Validation-and-Explanation">link</a>.
+
+<p>Please contact the <a href="https://groups.google.com/forum/#!forum/semeval-2020-task-4-organizers">task
+        organisers</a> or post on the <a
+        href="https://groups.google.com/forum/#!forum/semeval-2020-task-4-all">competition forum</a> if you have any
+    further queries.</p>
